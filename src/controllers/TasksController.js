@@ -3,7 +3,7 @@ const { projects } = require('./ProjectsController');
 function store(req, res) {
 
     const { id } = req.params;
-    const { task } = req.body;
+    const { title } = req.body;
 
     projects.map(project => {
         if (project.id === id) {
@@ -12,7 +12,7 @@ function store(req, res) {
                 project.tasks = [];
             }
 
-            project.tasks.push(task);
+            project.tasks.push(title);
 
 
         }
